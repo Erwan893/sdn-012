@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Program Akademik - SD 012 Beringin Jaya | Kurikulum & Ekstrakurikuler</title>
+    <meta name="description"
+        content="Program akademik SD 012 Beringin Jaya meliputi kurikulum merdeka, kegiatan ekstrakurikuler, dan berbagai program unggulan untuk mengembangkan potensi siswa.">
+    <meta name="keywords" content="kurikulum SD 012 Beringin Jaya, ekstrakurikuler, program akademik, kegiatan sekolah">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            dark: '#2D5016',
+                            DEFAULT: '#4A7C2C',
+                            light: '#7CB342',
+                            lighter: '#9CCC65'
+                        },
+                        accent: {
+                            dark: '#FFA000',
+                            DEFAULT: '#FFC107',
+                            light: '#FFD54F'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Page Load Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-md z-50 transition-all duration-300"
+        id="navbar">
+        <div class="container mx-auto px-6 md:px-12 lg:px-20">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="images/logo.png" alt="Logo SD 012 Beringin Jaya" class="h-12 w-auto">
+                    <span class="font-heading font-bold text-xl text-primary-dark hidden sm:block">SD 012 Beringin
+                        Jaya</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex items-center gap-8">
+                    <li><a href="index.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Beranda</a>
+                    </li>
+                    <li><a href="profil.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Profil</a>
+                    </li>
+                    <li><a href="akademik.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full border-b-2 border-primary">Akademik</a>
+                    </li>
+                    <li><a href="galeri.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Galeri</a>
+                    </li>
+                    <li><a href="kontak.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Kontak</a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Toggle -->
+                <button class="md:hidden flex flex-col gap-1.5 p-2" id="navbarToggle">
+                    <span class="w-6 h-0.5 bg-primary transition-all"></span>
+                    <span class="w-6 h-0.5 bg-primary transition-all"></span>
+                    <span class="w-6 h-0.5 bg-primary transition-all"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobileMenu">
+                <ul class="flex flex-col gap-4 py-4">
+                    <li><a href="index.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Beranda</a>
+                    </li>
+                    <li><a href="profil.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Profil</a>
+                    </li>
+                    <li><a href="akademik.html"
+                            class="block py-2 px-4 bg-primary/10 text-primary rounded-lg font-medium">Akademik</a></li>
+                    <li><a href="galeri.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Galeri</a>
+                    </li>
+                    <li><a href="kontak.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="animate-fadeInUp">
+
+        <!-- Page Header -->
+        <section class="relative h-[350px] flex items-center justify-center overflow-hidden mt-[70px]">
+            <div class="absolute inset-0">
+                <img src="images/hero/hero1.png" alt="SD 012 Beringin Jaya" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-dark/90 to-primary/80"></div>
+            <div class="relative z-10 text-center text-white px-4">
+                <h1 class="font-heading font-bold text-4xl md:text-5xl mb-4">Program Akademik</h1>
+                <p class="text-xl text-accent-light">Membangun Generasi Cerdas & Berkarakter</p>
+            </div>
+        </section>
+
+        <!-- Curriculum -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 md:px-12 lg:px-20">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-center text-primary-dark mb-4">
+                    Kurikulum Merdeka
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-accent to-primary-light rounded-full mx-auto mb-12"></div>
+
+                <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
+                    SD 012 Beringin Jaya menerapkan Kurikulum Merdeka yang berpusat pada peserta didik,
+                    memberikan fleksibilitas bagi guru untuk melakukan pembelajaran yang sesuai dengan kemampuan
+                    serta kebutuhan siswa.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-t-4 border-primary">
+                        <div
+                            class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
+                            <i data-lucide="blocks" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-primary-dark mb-3">Pembelajaran Berbasis Proyek
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Project Based Learning (PjBL) untuk mengembangkan soft skills dan karakter sesuai profil
+                            pelajar
+                            Pancasila.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-t-4 border-accent">
+                        <div
+                            class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6 text-accent-dark">
+                            <i data-lucide="user-check" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-primary-dark mb-3">Profil Pelajar Pancasila</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Fokus pada penguatan karakter: beriman, berkebinekaan global, gotong royong, mandiri,
+                            bernalar
+                            kritis, dan kreatif.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-t-4 border-primary">
+                        <div
+                            class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
+                            <i data-lucide="monitor" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-primary-dark mb-3">Literasi Digital</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Pengenalan teknologi sejak dini untuk mempersiapkan siswa menghadapi tantangan di era
+                            digital.
+                        </p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-t-4 border-accent">
+                        <div
+                            class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6 text-accent-dark">
+                            <i data-lucide="book" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-primary-dark mb-3">Pembelajaran Kontekstual</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Materi pembelajaran dikaitkan dengan kehidupan nyata sehari-hari siswa agar lebih bermakna.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Class Structure -->
+        <section class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6 md:px-12 lg:px-20">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-center text-primary-dark mb-4">
+                    Struktur Kelas
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-accent to-primary-light rounded-full mx-auto mb-12"></div>
+
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <!-- Phase A -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden group">
+                        <div class="bg-primary p-6 transition-colors group-hover:bg-primary-dark">
+                            <h3 class="font-heading font-bold text-2xl text-white">Fase A</h3>
+                            <p class="text-white/80">Kelas 1 & 2</p>
+                        </div>
+                        <div class="p-8">
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Fokus pada penguatan literasi dan numerasi dasar serta pembentukan karakter dan
+                                kemandirian
+                                siswa.
+                            </p>
+                            <i data-lucide="sprout" class="w-12 h-12 text-primary mx-auto opacity-50"></i>
+                        </div>
+                    </div>
+
+                    <!-- Phase B -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden group">
+                        <div class="bg-primary p-6 transition-colors group-hover:bg-primary-dark">
+                            <h3 class="font-heading font-bold text-2xl text-white">Fase B</h3>
+                            <p class="text-white/80">Kelas 3 & 4</p>
+                        </div>
+                        <div class="p-8">
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Pengembangan kemampuan berpikir logis dan sistematis, serta pengenalan lingkungan sosial
+                                dan
+                                alam.
+                            </p>
+                            <i data-lucide="flower-2" class="w-12 h-12 text-primary mx-auto opacity-50"></i>
+                        </div>
+                    </div>
+
+                    <!-- Phase C -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden group">
+                        <div class="bg-primary p-6 transition-colors group-hover:bg-primary-dark">
+                            <h3 class="font-heading font-bold text-2xl text-white">Fase C</h3>
+                            <p class="text-white/80">Kelas 5 & 6</p>
+                        </div>
+                        <div class="p-8">
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Persiapan menuju jenjang pendidikan menengah dengan pendalaman materi dan pengembangan
+                                minat
+                                bakat.
+                            </p>
+                            <i data-lucide="tree-deciduous" class="w-12 h-12 text-primary mx-auto opacity-50"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extracurriculars -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 md:px-12 lg:px-20">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-center text-primary-dark mb-4">
+                    Kegiatan Ekstrakurikuler
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-accent to-primary-light rounded-full mx-auto mb-12"></div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- Scout -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                        <div
+                            class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4 text-orange-600">
+                            <i data-lucide="tent" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="font-bold text-primary-dark">Pramuka</h4>
+                    </div>
+
+                    <!-- Sports -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                        <div
+                            class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600">
+                            <i data-lucide="trophy" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="font-bold text-primary-dark">Olahraga</h4>
+                    </div>
+
+                    <!-- Arts -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                        <div
+                            class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4 text-pink-600">
+                            <i data-lucide="palette" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="font-bold text-primary-dark">Seni Tari & Musik</h4>
+                    </div>
+
+                    <!-- Religious -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                        <div
+                            class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600">
+                            <i data-lucide="book-open" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="font-bold text-primary-dark">Keagamaan</h4>
+                    </div>
+
+                    <!-- Science -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                        <div
+                            class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 text-purple-600">
+                            <i data-lucide="microscope" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="font-bold text-primary-dark">Sains Club</h4>
+                    </div>
+
+                    <!-- English -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                        <div
+                            class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 text-red-600">
+                            <i data-lucide="languages" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="font-bold text-primary-dark">English Club</h4>
+                    </div>
+
+                    <!-- IT -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                        <div
+                            class="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4 text-cyan-600">
+                            <i data-lucide="laptop" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="font-bold text-primary-dark">Komputer</h4>
+                    </div>
+
+                    <!-- Environment -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                        <div
+                            class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 text-emerald-600">
+                            <i data-lucide="leaf" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="font-bold text-primary-dark">Dokter Kecil</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gradient-to-br from-primary-dark to-primary text-white py-12 md:py-16">
+            <div class="container mx-auto px-6 md:px-12 lg:px-20">
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <!-- About -->
+                    <div>
+                        <h3 class="font-heading font-bold text-xl text-accent-light mb-4">SD 012 Beringin Jaya</h3>
+                        <p class="text-white/90 leading-relaxed">
+                            Sekolah Dasar Negeri yang berkomitmen untuk menciptakan generasi berakhlak mulia dan
+                            berprestasi.
+                        </p>
+                    </div>
+
+                    <!-- Contact -->
+                    <div>
+                        <h3 class="font-heading font-bold text-xl text-accent-light mb-4">Kontak Kami</h3>
+                        <div class="space-y-3 text-white/90">
+                            <p class="flex items-start gap-2">
+                                <i data-lucide="map-pin" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                                <span>Jl. Pendidikan No. 12, Beringin Jaya</span>
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                                <span>(0123) 456-7890</span>
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                                <span>info@sd012beringinjaya.sch.id</span>
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                                <span>Senin - Jumat: 07.00 - 14.00 WIB</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h3 class="font-heading font-bold text-xl text-accent-light mb-4">Tautan Cepat</h3>
+                        <ul class="space-y-2 text-white/90">
+                            <li><a href="profil.html"
+                                    class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    Profil Sekolah
+                                </a></li>
+                            <li><a href="akademik.html"
+                                    class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    Program Akademik
+                                </a></li>
+                            <li><a href="galeri.html"
+                                    class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    Galeri Kegiatan
+                                </a></li>
+                            <li><a href="kontak.html"
+                                    class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    PPDB & Kontak
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-white/20 pt-8 text-center text-white/80">
+                    <p>&copy; 2026 SD 012 Beringin Jaya. Semua Hak Dilindungi.</p>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

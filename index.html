@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>SD 012 Beringin Jaya - Sekolah Dasar Terbaik di Beringin Jaya | Berakhlak Mulia & Berprestasi</title>
+    <meta name="description"
+        content="SD 012 Beringin Jaya adalah sekolah dasar negeri terbaik di daerah Beringin Jaya yang fokus pada pembentukan karakter anak, prestasi akademik, dan akhlak mulia. Daftar sekarang untuk tahun ajaran baru!">
+    <meta name="keywords"
+        content="SD 012 Beringin Jaya, sekolah dasar Beringin Jaya, SD negeri Beringin, sekolah terbaik Beringin, pendidikan karakter, PPDB SD Beringin Jaya, sekolah dasar berkualitas">
+    <meta name="author" content="SD 012 Beringin Jaya">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="SD 012 Beringin Jaya - Berakhlak Mulia & Berprestasi">
+    <meta property="og:description"
+        content="Sekolah Dasar Negeri terbaik di Beringin Jaya yang fokus pada karakter dan prestasi anak">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            dark: '#2D5016',
+                            DEFAULT: '#4A7C2C',
+                            light: '#7CB342',
+                            lighter: '#9CCC65'
+                        },
+                        accent: {
+                            dark: '#FFA000',
+                            DEFAULT: '#FFC107',
+                            light: '#FFD54F'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Hero slider transition */
+        .hero-slide {
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-md z-50 transition-all duration-300"
+        id="navbar">
+        <div class="container mx-auto px-6 md:px-12 lg:px-20">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="images/logo.png" alt="Logo SD 012 Beringin Jaya" class="h-12 w-auto">
+                    <span class="font-heading font-bold text-xl text-primary-dark hidden sm:block">SD 012 Beringin
+                        Jaya</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex items-center gap-8">
+                    <li><a href="index.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full border-b-2 border-primary">Beranda</a>
+                    </li>
+                    <li><a href="profil.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Profil</a>
+                    </li>
+                    <li><a href="akademik.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Akademik</a>
+                    </li>
+                    <li><a href="galeri.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Galeri</a>
+                    </li>
+                    <li><a href="kontak.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Kontak</a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Toggle -->
+                <button class="md:hidden flex flex-col gap-1.5 p-2" id="navbarToggle">
+                    <span class="w-6 h-0.5 bg-primary transition-all"></span>
+                    <span class="w-6 h-0.5 bg-primary transition-all"></span>
+                    <span class="w-6 h-0.5 bg-primary transition-all"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobileMenu">
+                <ul class="flex flex-col gap-4 py-4">
+                    <li><a href="index.html"
+                            class="block py-2 px-4 bg-primary/10 text-primary rounded-lg font-medium">Beranda</a></li>
+                    <li><a href="profil.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Profil</a>
+                    </li>
+                    <li><a href="akademik.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Akademik</a>
+                    </li>
+                    <li><a href="galeri.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Galeri</a>
+                    </li>
+                    <li><a href="kontak.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="animate-fadeInUp">
+
+        <!-- Hero Section -->
+        <section class="relative h-[600px] flex items-center justify-center overflow-hidden mt-[70px]">
+            <!-- Slider -->
+            <div class="absolute inset-0" id="heroSlider">
+                <div class="hero-slide absolute inset-0 opacity-100">
+                    <img src="images/hero/hero1.png" alt="Siswa SD 012 Beringin Jaya belajar di kelas"
+                        class="w-full h-full object-cover">
+                </div>
+                <div class="hero-slide absolute inset-0 opacity-0">
+                    <img src="images/hero/hero2.png" alt="Siswa bermain di bawah pohon beringin"
+                        class="w-full h-full object-cover">
+                </div>
+                <div class="hero-slide absolute inset-0 opacity-0">
+                    <img src="images/hero/hero3.png" alt="Gedung SD 012 Beringin Jaya"
+                        class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-dark/85 to-primary/70"></div>
+
+            <!-- Content -->
+            <div class="relative z-10 text-center text-white px-6 md:px-12 max-w-5xl animate-fadeInUp">
+                <h1 class="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-4 drop-shadow-lg">
+                    Selamat Datang di SD 012 Beringin Jaya
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-accent-light font-medium">
+                    Berakhlak Mulia & Berprestasi
+                </p>
+                <a href="kontak.html"
+                    class="inline-flex items-center gap-2 bg-gradient-to-r from-accent to-accent-light text-primary-dark px-8 py-4 rounded-xl font-heading font-semibold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                    <i data-lucide="user-plus" class="w-5 h-5"></i>
+                    Daftar Sekarang
+                </a>
+            </div>
+        </section>
+
+        <!-- Welcome Section -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 md:px-12 lg:px-20">
+                <div class="grid md:grid-cols-3 gap-8 md:gap-12 items-center">
+                    <div class="flex justify-center">
+                        <img src="images/logo.png" alt="Kepala Sekolah SD 012 Beringin Jaya"
+                            class="w-64 h-64 rounded-full shadow-2xl border-4 border-primary-light">
+                    </div>
+                    <div class="md:col-span-2">
+                        <h2 class="font-heading font-bold text-3xl md:text-4xl text-primary-dark mb-6">
+                            Sambutan Kepala Sekolah
+                        </h2>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            Assalamu'alaikum Warahmatullahi Wabarakatuh,
+                        </p>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            Puji syukur kehadirat Allah SWT atas segala rahmat dan karunia-Nya. Selamat datang di
+                            website
+                            resmi SD 012 Beringin Jaya.
+                            Kami berkomitmen untuk memberikan pendidikan berkualitas yang tidak hanya fokus pada
+                            prestasi
+                            akademik,
+                            tetapi juga pembentukan karakter dan akhlak mulia bagi setiap siswa.
+                        </p>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            SD 012 Beringin Jaya adalah rumah kedua bagi putra-putri Anda, tempat mereka tumbuh,
+                            belajar,
+                            dan berkembang
+                            menjadi generasi yang cerdas, berakhlak, dan berprestasi. Dengan tenaga pendidik yang
+                            profesional dan
+                            fasilitas yang memadai, kami siap mendampingi perjalanan pendidikan anak-anak tercinta.
+                        </p>
+                        <p class="text-gray-700 font-semibold">
+                            Drs. H. Ahmad Suryanto, M.Pd<br>
+                            <span class="text-gray-600 font-normal italic">Kepala Sekolah SD 012 Beringin Jaya</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6 md:px-12 lg:px-20">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-center text-primary-dark mb-4">
+                    Berita Terbaru
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-accent to-primary-light rounded-full mx-auto mb-12"></div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- News Card 1 -->
+                    <div
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <img src="images/hero/hero2.png" alt="Kegiatan Outdoor Learning"
+                            class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-heading font-bold text-xl text-primary-dark mb-3">
+                                Outdoor Learning di Bawah Pohon Beringin
+                            </h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                Siswa kelas 4 mengikuti kegiatan pembelajaran outdoor yang menyenangkan di bawah pohon
+                                beringin
+                                yang rindang. Metode pembelajaran ini meningkatkan kreativitas dan semangat belajar
+                                siswa.
+                            </p>
+                            <div class="flex items-center gap-2 text-gray-500 text-sm">
+                                <i data-lucide="calendar" class="w-4 h-4"></i>
+                                <span>15 Januari 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News Card 2 -->
+                    <div
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <img src="images/hero/hero1.png" alt="Pembelajaran Interaktif" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-heading font-bold text-xl text-primary-dark mb-3">
+                                Pembelajaran Berbasis Teknologi
+                            </h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                SD 012 Beringin Jaya mengintegrasikan teknologi dalam pembelajaran untuk meningkatkan
+                                pemahaman siswa.
+                                Setiap kelas dilengkapi dengan perangkat multimedia yang mendukung proses belajar
+                                mengajar.
+                            </p>
+                            <div class="flex items-center gap-2 text-gray-500 text-sm">
+                                <i data-lucide="calendar" class="w-4 h-4"></i>
+                                <span>10 Januari 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News Card 3 -->
+                    <div
+                        class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <img src="images/hero/hero3.png" alt="PPDB 2026" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-heading font-bold text-xl text-primary-dark mb-3">
+                                Pendaftaran Siswa Baru 2026/2027
+                            </h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">
+                                Pendaftaran Peserta Didik Baru (PPDB) untuk tahun ajaran 2026/2027 telah dibuka!
+                                Daftarkan putra-putri Anda sekarang juga. Kuota terbatas!
+                            </p>
+                            <div class="flex items-center gap-2 text-gray-500 text-sm">
+                                <i data-lucide="calendar" class="w-4 h-4"></i>
+                                <span>5 Januari 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision & Mission -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 md:px-12 lg:px-20">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-center text-primary-dark mb-4">
+                    Visi & Misi
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-accent to-primary-light rounded-full mx-auto mb-12"></div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Vision -->
+                    <div
+                        class="bg-gradient-to-br from-primary to-primary-light text-white p-8 md:p-12 rounded-2xl shadow-2xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-6">
+                            <i data-lucide="target" class="w-10 h-10 text-accent-light"></i>
+                            <h3 class="font-heading font-bold text-2xl md:text-3xl text-accent-light">Visi</h3>
+                        </div>
+                        <p class="text-lg leading-relaxed">
+                            "Terwujudnya Siswa yang Berakhlak Mulia, Cerdas, Terampil, dan Berprestasi
+                            Berdasarkan Iman dan Takwa"
+                        </p>
+                    </div>
+
+                    <!-- Mission -->
+                    <div
+                        class="bg-gradient-to-br from-primary to-primary-light text-white p-8 md:p-12 rounded-2xl shadow-2xl hover:shadow-3xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-center gap-3 mb-6">
+                            <i data-lucide="rocket" class="w-10 h-10 text-accent-light"></i>
+                            <h3 class="font-heading font-bold text-2xl md:text-3xl text-accent-light">Misi</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></i>
+                                <span>Menyelenggarakan pendidikan yang berkualitas dan berkarakter</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></i>
+                                <span>Mengembangkan potensi akademik dan non-akademik siswa</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></i>
+                                <span>Menanamkan nilai-nilai religius dalam kehidupan sehari-hari</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></i>
+                                <span>Menciptakan lingkungan belajar yang nyaman dan kondusif</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-accent flex-shrink-0 mt-1"></i>
+                                <span>Membangun kerjasama yang harmonis dengan orang tua dan masyarakat</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6 md:px-12 lg:px-20">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-center text-primary-dark mb-4">
+                    Mengapa Memilih SD 012 Beringin Jaya?
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-accent to-primary-light rounded-full mx-auto mb-12"></div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Feature 1 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-primary-light to-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-xl text-primary-dark mb-3">Guru Berkualitas</h4>
+                        <p class="text-gray-600 leading-relaxed">
+                            Tenaga pendidik profesional dan berpengalaman yang peduli pada perkembangan setiap siswa
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-primary-light to-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="building-2" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-xl text-primary-dark mb-3">Fasilitas Lengkap</h4>
+                        <p class="text-gray-600 leading-relaxed">
+                            Ruang kelas nyaman, perpustakaan, lab komputer, dan area bermain yang aman
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-primary-light to-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="book-open" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-xl text-primary-dark mb-3">Kurikulum Terkini</h4>
+                        <p class="text-gray-600 leading-relaxed">
+                            Menerapkan Kurikulum Merdeka dengan pendekatan pembelajaran yang inovatif
+                        </p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-primary-light to-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="trophy" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-xl text-primary-dark mb-3">Prestasi Gemilang</h4>
+                        <p class="text-gray-600 leading-relaxed">
+                            Berbagai prestasi akademik dan non-akademik di tingkat kecamatan dan kabupaten
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gradient-to-br from-primary-dark to-primary text-white py-12 md:py-16">
+            <div class="container mx-auto px-6 md:px-12 lg:px-20">
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <!-- About -->
+                    <div>
+                        <h3 class="font-heading font-bold text-xl text-accent-light mb-4">SD 012 Beringin Jaya</h3>
+                        <p class="text-white/90 leading-relaxed">
+                            Sekolah Dasar Negeri yang berkomitmen untuk menciptakan generasi berakhlak mulia dan
+                            berprestasi.
+                        </p>
+                    </div>
+
+                    <!-- Contact -->
+                    <div>
+                        <h3 class="font-heading font-bold text-xl text-accent-light mb-4">Kontak Kami</h3>
+                        <div class="space-y-3 text-white/90">
+                            <p class="flex items-start gap-2">
+                                <i data-lucide="map-pin" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                                <span>Jl. Pendidikan No. 12, Beringin Jaya</span>
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                                <span>(0123) 456-7890</span>
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                                <span>info@sd012beringinjaya.sch.id</span>
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                                <span>Senin - Jumat: 07.00 - 14.00 WIB</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h3 class="font-heading font-bold text-xl text-accent-light mb-4">Tautan Cepat</h3>
+                        <ul class="space-y-2 text-white/90">
+                            <li><a href="profil.html"
+                                    class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    Profil Sekolah
+                                </a></li>
+                            <li><a href="akademik.html"
+                                    class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    Program Akademik
+                                </a></li>
+                            <li><a href="galeri.html"
+                                    class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    Galeri Kegiatan
+                                </a></li>
+                            <li><a href="kontak.html"
+                                    class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    PPDB & Kontak
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-white/20 pt-8 text-center text-white/80">
+                    <p>&copy; 2026 SD 012 Beringin Jaya. Semua Hak Dilindungi.</p>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Kontak & PPDB - SD 012 Beringin Jaya | Pendaftaran Siswa Baru</title>
+    <meta name="description"
+        content="Hubungi SD 012 Beringin Jaya dan daftarkan putra-putri Anda untuk tahun ajaran baru. Formulir pendaftaran siswa baru (PPDB) dan kontak sekolah tersedia di halaman ini.">
+    <meta name="keywords"
+        content="kontak SD 012 Beringin Jaya, PPDB SD Beringin, pendaftaran siswa baru, formulir pendaftaran">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            dark: '#2D5016',
+                            DEFAULT: '#4A7C2C',
+                            light: '#7CB342',
+                            lighter: '#9CCC65'
+                        },
+                        accent: {
+                            dark: '#FFA000',
+                            DEFAULT: '#FFC107',
+                            light: '#FFD54F'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Page Load Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-md z-50 transition-all duration-300"
+        id="navbar">
+        <div class="container mx-auto px-6 md:px-12 lg:px-20">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="images/logo.png" alt="Logo SD 012 Beringin Jaya" class="h-12 w-auto">
+                    <span class="font-heading font-bold text-xl text-primary-dark hidden sm:block">SD 012 Beringin
+                        Jaya</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex items-center gap-8">
+                    <li><a href="index.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Beranda</a>
+                    </li>
+                    <li><a href="profil.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Profil</a>
+                    </li>
+                    <li><a href="akademik.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Akademik</a>
+                    </li>
+                    <li><a href="galeri.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Galeri</a>
+                    </li>
+                    <li><a href="kontak.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full border-b-2 border-primary">Kontak</a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Toggle -->
+                <button class="md:hidden flex flex-col gap-1.5 p-2" id="navbarToggle">
+                    <span class="w-6 h-0.5 bg-primary transition-all"></span>
+                    <span class="w-6 h-0.5 bg-primary transition-all"></span>
+                    <span class="w-6 h-0.5 bg-primary transition-all"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobileMenu">
+                <ul class="flex flex-col gap-4 py-4">
+                    <li><a href="index.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Beranda</a>
+                    </li>
+                    <li><a href="profil.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Profil</a>
+                    </li>
+                    <li><a href="akademik.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Akademik</a>
+                    </li>
+                    <li><a href="galeri.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Galeri</a>
+                    </li>
+                    <li><a href="kontak.html"
+                            class="block py-2 px-4 bg-primary/10 text-primary rounded-lg font-medium">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="animate-fadeInUp">
+
+        <!-- Page Header -->
+        <section class="relative h-[350px] flex items-center justify-center overflow-hidden mt-[70px]">
+            <div class="absolute inset-0">
+                <img src="images/hero/hero3.png" alt="SD 012 Beringin Jaya" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-dark/90 to-primary/80"></div>
+            <div class="relative z-10 text-center text-white px-4">
+                <h1 class="font-heading font-bold text-4xl md:text-5xl mb-4">Kontak & PPDB</h1>
+                <p class="text-xl text-accent-light">Hubungi Kami & Pendaftaran Siswa Baru</p>
+            </div>
+        </section>
+
+        <!-- Contact Info -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 md:px-12 lg:px-20">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-center text-primary-dark mb-4">
+                    Informasi Kontak
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-accent to-primary-light rounded-full mx-auto mb-12"></div>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <!-- Address -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                        <div
+                            class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                            <i data-lucide="map-pin" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-primary-dark mb-4">Alamat Sekolah</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Jl. Pendidikan No. 12<br>
+                            Kelurahan Beringin Jaya<br>
+                            Kabupaten Kutai Kartanegara
+                        </p>
+                    </div>
+
+                    <!-- Contact -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                        <div
+                            class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                            <i data-lucide="phone" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-primary-dark mb-4">Hubungi Kami</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Telepon: (0123) 456-7890<br>
+                            WhatsApp: 0812-3456-7890<br>
+                            Email: info@sd012beringinjaya.sch.id
+                        </p>
+                    </div>
+
+                    <!-- Hours -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-lg text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-gray-100">
+                        <div
+                            class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                            <i data-lucide="clock" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-heading font-bold text-xl text-primary-dark mb-4">Jam Operasional</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Senin - Kamis: 07.00 - 14.00<br>
+                            Jumat: 07.00 - 11.00<br>
+                            Sabtu: 07.00 - 12.00
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact & Map Grid -->
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-primary">
+                        <h3 class="font-heading font-bold text-2xl text-primary-dark mb-6 flex items-center gap-3">
+                            <i data-lucide="message-circle" class="w-6 h-6"></i>
+                            Kirim Pesan
+                        </h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nama Lengkap</label>
+                                <input type="text" id="name" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-gray-400"
+                                    placeholder="Masukkan nama Anda">
+                                <span class="text-red-500 text-sm mt-1 hidden" id="nameError">Nama wajib diisi minimal 3
+                                    karakter</span>
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                <input type="email" id="email" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-gray-400"
+                                    placeholder="contoh@email.com">
+                                <span class="text-red-500 text-sm mt-1 hidden" id="emailError">Masukkan email yang
+                                    valid</span>
+                            </div>
+
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Nomor Telepon /
+                                    WA</label>
+                                <input type="tel" id="phone" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-gray-400"
+                                    placeholder="Contoh: 081234567890">
+                                <span class="text-red-500 text-sm mt-1 hidden" id="phoneError">Masukkan nomor telepon
+                                    yang
+                                    valid</span>
+                            </div>
+
+                            <div>
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Subjek Pesan</label>
+                                <select id="subject"
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all cursor-pointer">
+                                    <option value="Pertanyaan Umum">Pertanyaan Umum</option>
+                                    <option value="PPDB">Info PPDB</option>
+                                    <option value="Akademik">Informasi Akademik</option>
+                                    <option value="Keluhan">Saran & Masukan</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Pesan</label>
+                                <textarea id="message" rows="5" required
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-gray-400"
+                                    placeholder="Tuliskan pesan Anda di sini..."></textarea>
+                                <span class="text-red-500 text-sm mt-1 hidden" id="messageError">Pesan wajib diisi
+                                    minimal
+                                    10 karakter</span>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2">
+                                <span>Kirim Pesan</span>
+                                <i data-lucide="send" class="w-5 h-5"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="h-full min-h-[500px] bg-gray-200 rounded-2xl shadow-lg overflow-hidden relative">
+                        <!-- Placeholder Map -->
+                        <div
+                            class="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 p-8 text-center">
+                            <div class="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mb-6">
+                                <i data-lucide="map" class="w-10 h-10 text-gray-400"></i>
+                            </div>
+                            <h3 class="font-heading font-bold text-xl text-gray-600 mb-2">Peta Lokasi Sekolah</h3>
+                            <p class="text-gray-500 mb-6">Jl. Pendidikan No. 12, Beringin Jaya</p>
+                            <a href="https://maps.google.com" target="_blank"
+                                class="inline-flex items-center gap-2 bg-white text-primary px-6 py-2 rounded-lg font-medium shadow-md hover:shadow-lg transition-all">
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                                Buka di Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PPDB Section -->
+        <section class="py-16 md:py-24 bg-primary-dark text-white relative overflow-hidden" id="ppdb">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-10">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1" />
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                </svg>
+            </div>
+
+            <div class="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+                <div class="text-center mb-16">
+                    <span
+                        class="inline-block bg-accent text-primary-dark text-sm font-bold px-4 py-1 rounded-full mb-4 animate-bounce">
+                        Tahun Ajaran 2026/2027
+                    </span>
+                    <h2 class="font-heading font-bold text-3xl md:text-5xl mb-6">
+                        Penerimaan Peserta Didik Baru
+                    </h2>
+                    <p class="text-xl text-white/90 max-w-2xl mx-auto">
+                        Mari bergabung menjadi bagian dari keluarga besar SD 012 Beringin Jaya.
+                        Isi formulir di bawah ini untuk pendaftaran online.
+                    </p>
+                </div>
+
+                <div class="bg-white text-gray-800 rounded-3xl shadow-2xl p-8 md:p-12 max-w-4xl mx-auto">
+                    <form id="ppdbForm" class="space-y-8">
+                        <!-- Student Data -->
+                        <div>
+                            <h3
+                                class="font-heading font-bold text-2xl text-primary mb-6 flex items-center gap-3 pb-4 border-b">
+                                <i data-lucide="user" class="w-6 h-6"></i>
+                                Data Calon Siswa
+                            </h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="col-span-2">
+                                    <label class="block font-medium mb-2">Nama Lengkap</label>
+                                    <input type="text" id="studentName" required
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+                                </div>
+
+                                <div>
+                                    <label class="block font-medium mb-2">Jenis Kelamin</label>
+                                    <select id="gender"
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white">
+                                        <option value="L">Laki-laki</option>
+                                        <option value="P">Perempuan</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block font-medium mb-2">Tanggal Lahir</label>
+                                    <input type="date" id="birthdate" required
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+                                </div>
+
+                                <div class="col-span-2">
+                                    <label class="block font-medium mb-2">Alamat Lengkap</label>
+                                    <textarea id="address" rows="3" required
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"></textarea>
+                                </div>
+
+                                <div class="col-span-2">
+                                    <label class="block font-medium mb-2">Asal TK / PAUD (Opsional)</label>
+                                    <input type="text" id="prevSchool"
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Parents Data -->
+                        <div>
+                            <h3
+                                class="font-heading font-bold text-2xl text-primary mb-6 flex items-center gap-3 pb-4 border-b">
+                                <i data-lucide="users" class="w-6 h-6"></i>
+                                Data Orang Tua / Wali
+                            </h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block font-medium mb-2">Nama Ayah</label>
+                                    <input type="text" id="fatherName" required
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+                                </div>
+
+                                <div>
+                                    <label class="block font-medium mb-2">Nama Ibu</label>
+                                    <input type="text" id="motherName" required
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+                                </div>
+
+                                <div>
+                                    <label class="block font-medium mb-2">Nomor WhatsApp</label>
+                                    <input type="tel" id="parentPhone" required
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+                                </div>
+
+                                <div>
+                                    <label class="block font-medium mb-2">Pekerjaan Wali</label>
+                                    <input type="text" id="parentJob" required
+                                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 border-t border-gray-200">
+                            <button type="submit"
+                                class="w-full bg-accent hover:bg-yellow-400 text-primary-dark font-bold text-lg py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2">
+                                <i data-lucide="check-circle" class="w-6 h-6"></i>
+                                <span>Kirim Pendaftaran</span>
+                            </button>
+                            <p class="text-center text-gray-500 text-sm mt-4">
+                                Dengan mengirimkan formulir ini, Anda menyetujui syarat & ketentuan PPDB SD 012 Beringin
+                                Jaya
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-primary-dark to-primary text-white py-12 md:py-16">
+        <div class="container mx-auto px-6 md:px-12 lg:px-20">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="font-heading font-bold text-xl text-accent-light mb-4">SD 012 Beringin Jaya</h3>
+                    <p class="text-white/90 leading-relaxed">
+                        Sekolah Dasar Negeri yang berkomitmen untuk menciptakan generasi berakhlak mulia dan
+                        berprestasi.
+                    </p>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-heading font-bold text-xl text-accent-light mb-4">Kontak Kami</h3>
+                    <div class="space-y-3 text-white/90">
+                        <p class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span>Jl. Pendidikan No. 12, Beringin Jaya</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                            <span>(0123) 456-7890</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            <span>info@sd012beringinjaya.sch.id</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-5 h-5"></i>
+                            <span>Senin - Jumat: 07.00 - 14.00 WIB</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-heading font-bold text-xl text-accent-light mb-4">Tautan Cepat</h3>
+                    <ul class="space-y-2 text-white/90">
+                        <li><a href="profil.html"
+                                class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                Profil Sekolah
+                            </a></li>
+                        <li><a href="akademik.html"
+                                class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                Program Akademik
+                            </a></li>
+                        <li><a href="galeri.html"
+                                class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                Galeri Kegiatan
+                            </a></li>
+                        <li><a href="kontak.html"
+                                class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                PPDB & Kontak
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 pt-8 text-center text-white/80">
+                <p>&copy; 2026 SD 012 Beringin Jaya. Semua Hak Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

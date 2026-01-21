@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Profil Sekolah - SD 012 Beringin Jaya | Sejarah, Struktur Organisasi & Guru</title>
+    <meta name="description"
+        content="Profil lengkap SD 012 Beringin Jaya meliputi sejarah sekolah, struktur organisasi, dan profil guru-guru berkualitas yang berdedikasi untuk pendidikan anak-anak.">
+    <meta name="keywords"
+        content="profil SD 012 Beringin Jaya, sejarah sekolah, guru SD Beringin Jaya, struktur organisasi sekolah">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            dark: '#2D5016',
+                            DEFAULT: '#4A7C2C',
+                            light: '#7CB342',
+                            lighter: '#9CCC65'
+                        },
+                        accent: {
+                            dark: '#FFA000',
+                            DEFAULT: '#FFC107',
+                            light: '#FFD54F'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #7CB342 0%, #4A7C2C 100%);
+            border-radius: 9999px;
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-line::before {
+                left: 24px;
+            }
+        }
+
+        /* Hero slider transition */
+        .hero-slide {
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Page Load Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-md z-50 transition-all duration-300"
+        id="navbar">
+        <div class="container mx-auto px-6 md:px-12 lg:px-20">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="images/logo.png" alt="Logo SD 012 Beringin Jaya" class="h-12 w-auto">
+                    <span class="font-heading font-bold text-xl text-primary-dark hidden sm:block">SD 012 Beringin
+                        Jaya</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex items-center gap-8">
+                    <li><a href="index.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Beranda</a>
+                    </li>
+                    <li><a href="profil.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full border-b-2 border-primary">Profil</a>
+                    </li>
+                    <li><a href="akademik.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Akademik</a>
+                    </li>
+                    <li><a href="galeri.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Galeri</a>
+                    </li>
+                    <li><a href="kontak.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Kontak</a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Toggle -->
+                <button class="md:hidden flex flex-col gap-1.5 p-2" id="navbarToggle">
+                    <span class="w-6 h-0.5 bg-primary transition-all"></span>
+                    <span class="w-6 h-0.5 bg-primary transition-all"></span>
+                    <span class="w-6 h-0.5 bg-primary transition-all"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobileMenu">
+                <ul class="flex flex-col gap-4 py-4">
+                    <li><a href="index.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Beranda</a>
+                    </li>
+                    <li><a href="profil.html"
+                            class="block py-2 px-4 bg-primary/10 text-primary rounded-lg font-medium">Profil</a></li>
+                    <li><a href="akademik.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Akademik</a>
+                    </li>
+                    <li><a href="galeri.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Galeri</a>
+                    </li>
+                    <li><a href="kontak.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="animate-fadeInUp">
+
+        <!-- Page Header -->
+        <section class="relative h-[350px] flex items-center justify-center overflow-hidden mt-[70px]">
+            <div class="absolute inset-0">
+                <img src="images/hero/hero3.png" alt="SD 012 Beringin Jaya" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-dark/90 to-primary/80"></div>
+            <div class="relative z-10 text-center text-white px-4">
+                <h1 class="font-heading font-bold text-4xl md:text-5xl mb-4">Profil Sekolah</h1>
+                <p class="text-xl text-accent-light">Mengenal Lebih Dekat SD 012 Beringin Jaya</p>
+            </div>
+        </section>
+
+        <!-- School History -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 md:px-12 lg:px-20">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-center text-primary-dark mb-4">
+                    Sejarah Sekolah
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-accent to-primary-light rounded-full mx-auto mb-16"></div>
+
+                <div class="relative timeline-line">
+                    <!-- Timeline Item 1 -->
+                    <div class="flex flex-col md:flex-row gap-8 mb-12 relative">
+                        <div
+                            class="timeline-dot absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-accent border-4 border-white rounded-full shadow-lg z-10 top-0">
+                        </div>
+                        <div class="md:w-1/2 text-left md:text-right md:pr-12 md:order-1 pl-20 md:pl-0">
+                            <div
+                                class="inline-block bg-primary-light/10 px-4 py-1 rounded-full text-primary font-bold text-lg mb-2">
+                                1985</div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 md:order-2 pl-16">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-primary">
+                                <h3 class="font-heading font-bold text-xl text-primary-dark mb-2">Pendirian Sekolah</h3>
+                                <p class="text-gray-600 leading-relaxed">
+                                    SD 012 Beringin Jaya didirikan pada tahun 1985 sebagai sekolah dasar negeri untuk
+                                    melayani
+                                    kebutuhan pendidikan masyarakat di daerah Beringin Jaya. Nama "Beringin Jaya"
+                                    diambil
+                                    dari pohon
+                                    beringin besar yang menjadi landmark daerah ini.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="flex flex-col md:flex-row gap-8 mb-12 relative">
+                        <div
+                            class="timeline-dot absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-accent border-4 border-white rounded-full shadow-lg z-10 top-0">
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 md:order-2">
+                            <div
+                                class="inline-block bg-primary-light/10 px-4 py-1 rounded-full text-primary font-bold text-lg mb-2 pl-20 md:pl-4">
+                                1995</div>
+                        </div>
+                        <div class="md:w-1/2 text-left md:text-right md:pr-12 md:order-1 pl-16 md:pl-0">
+                            <div
+                                class="bg-white p-6 rounded-2xl shadow-lg border-r-4 border-primary md:border-r-4 md:border-l-0 border-l-4">
+                                <h3 class="font-heading font-bold text-xl text-primary-dark mb-2">Renovasi Besar</h3>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Dilakukan renovasi besar-besaran untuk meningkatkan kualitas fasilitas pendidikan.
+                                    Penambahan ruang kelas baru, perpustakaan, dan laboratorium komputer pertama.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="flex flex-col md:flex-row gap-8 mb-12 relative">
+                        <div
+                            class="timeline-dot absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-accent border-4 border-white rounded-full shadow-lg z-10 top-0">
+                        </div>
+                        <div class="md:w-1/2 text-left md:text-right md:pr-12 md:order-1 pl-20 md:pl-0">
+                            <div
+                                class="inline-block bg-primary-light/10 px-4 py-1 rounded-full text-primary font-bold text-lg mb-2">
+                                2010</div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 md:order-2 pl-16">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-primary">
+                                <h3 class="font-heading font-bold text-xl text-primary-dark mb-2">Akreditasi A</h3>
+                                <p class="text-gray-600 leading-relaxed">
+                                    SD 012 Beringin Jaya berhasil meraih akreditasi A dari Badan Akreditasi Nasional
+                                    Sekolah/Madrasah
+                                    (BAN-S/M), menandai komitmen sekolah terhadap kualitas pendidikan.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4 -->
+                    <div class="flex flex-col md:flex-row gap-8 mb-12 relative">
+                        <div
+                            class="timeline-dot absolute left-6 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 bg-accent border-4 border-white rounded-full shadow-lg z-10 top-0">
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 md:order-2">
+                            <div
+                                class="inline-block bg-primary-light/10 px-4 py-1 rounded-full text-primary font-bold text-lg mb-2 pl-20 md:pl-4">
+                                2026</div>
+                        </div>
+                        <div class="md:w-1/2 text-left md:text-right md:pr-12 md:order-1 pl-16 md:pl-0">
+                            <div
+                                class="bg-white p-6 rounded-2xl shadow-lg border-r-4 border-primary md:border-r-4 md:border-l-0 border-l-4">
+                                <h3 class="font-heading font-bold text-xl text-primary-dark mb-2">Sekolah Ramah
+                                    Lingkungan
+                                </h3>
+                                <p class="text-gray-600 leading-relaxed">
+                                    SD 012 Beringin Jaya meraih penghargaan sebagai Sekolah Adiwiyata (Sekolah Ramah
+                                    Lingkungan)
+                                    dengan program penghijauan dan pengelolaan sampah yang berkelanjutan.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organizational Structure -->
+        <section class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6 md:px-12 lg:px-20">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-center text-primary-dark mb-4">
+                    Struktur Organisasi
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-accent to-primary-light rounded-full mx-auto mb-12"></div>
+
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden max-w-4xl mx-auto">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-gradient-to-r from-primary to-primary-light text-white">
+                                    <th class="p-4 font-heading font-bold">Jabatan</th>
+                                    <th class="p-4 font-heading font-bold">Nama</th>
+                                    <th class="p-4 font-heading font-bold">NIP</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100">
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="p-4 font-semibold text-primary-dark">Kepala Sekolah</td>
+                                    <td class="p-4 text-gray-700">Drs. H. Ahmad Suryanto, M.Pd</td>
+                                    <td class="p-4 text-gray-500 font-mono text-sm">196505121988031007</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="p-4 font-semibold text-primary-dark">Wakil Kepala Sekolah</td>
+                                    <td class="p-4 text-gray-700">Siti Nurhaliza, S.Pd</td>
+                                    <td class="p-4 text-gray-500 font-mono text-sm">197203151995122003</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="p-4 font-semibold text-primary-dark">Kepala Tata Usaha</td>
+                                    <td class="p-4 text-gray-700">Bambang Wijaya, S.E</td>
+                                    <td class="p-4 text-gray-500 font-mono text-sm">197508202000121002</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="p-4 font-semibold text-primary-dark">Koordinator Kurikulum</td>
+                                    <td class="p-4 text-gray-700">Dr. Rina Kusuma, M.Pd</td>
+                                    <td class="p-4 text-gray-500 font-mono text-sm">198001102005012008</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="p-4 font-semibold text-primary-dark">Koordinator Kesiswaan</td>
+                                    <td class="p-4 text-gray-700">Ahmad Fauzi, S.Pd</td>
+                                    <td class="p-4 text-gray-500 font-mono text-sm">198506152010011015</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="p-4 font-semibold text-primary-dark">Koordinator Sarana Prasarana</td>
+                                    <td class="p-4 text-gray-700">Hendra Gunawan, S.T</td>
+                                    <td class="p-4 text-gray-500 font-mono text-sm">198209182008011012</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teachers -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 md:px-12 lg:px-20">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-center text-primary-dark mb-4">
+                    Guru & Tenaga Pendidik
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-accent to-primary-light rounded-full mx-auto mb-8"></div>
+                <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed">
+                    Tim guru profesional dan berdedikasi yang siap membimbing putra-putri Anda menuju masa depan yang
+                    gemilang
+                </p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Teacher 1 -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                        <div class="w-32 h-32 mx-auto mb-4 relative">
+                            <div
+                                class="absolute inset-0 bg-primary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <img src="images/logo.png" alt="Dewi Lestari, S.Pd"
+                                class="w-full h-full object-cover rounded-full border-4 border-primary-light group-hover:border-accent transition-colors relative z-10">
+                        </div>
+                        <h4 class="font-heading font-bold text-lg text-primary-dark mb-1">Dewi Lestari, S.Pd</h4>
+                        <p class="text-gray-500 text-sm">Guru Kelas 1</p>
+                    </div>
+
+                    <!-- Teacher 2 -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                        <div class="w-32 h-32 mx-auto mb-4 relative">
+                            <div
+                                class="absolute inset-0 bg-primary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <img src="images/logo.png" alt="Rudi Hartono, S.Pd"
+                                class="w-full h-full object-cover rounded-full border-4 border-primary-light group-hover:border-accent transition-colors relative z-10">
+                        </div>
+                        <h4 class="font-heading font-bold text-lg text-primary-dark mb-1">Rudi Hartono, S.Pd</h4>
+                        <p class="text-gray-500 text-sm">Guru Kelas 2</p>
+                    </div>
+
+                    <!-- Teacher 3 -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                        <div class="w-32 h-32 mx-auto mb-4 relative">
+                            <div
+                                class="absolute inset-0 bg-primary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <img src="images/logo.png" alt="Sari Indah, S.Pd"
+                                class="w-full h-full object-cover rounded-full border-4 border-primary-light group-hover:border-accent transition-colors relative z-10">
+                        </div>
+                        <h4 class="font-heading font-bold text-lg text-primary-dark mb-1">Sari Indah, S.Pd</h4>
+                        <p class="text-gray-500 text-sm">Guru Kelas 3</p>
+                    </div>
+
+                    <!-- Teacher 4 -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                        <div class="w-32 h-32 mx-auto mb-4 relative">
+                            <div
+                                class="absolute inset-0 bg-primary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <img src="images/logo.png" alt="Budi Santoso, S.Pd"
+                                class="w-full h-full object-cover rounded-full border-4 border-primary-light group-hover:border-accent transition-colors relative z-10">
+                        </div>
+                        <h4 class="font-heading font-bold text-lg text-primary-dark mb-1">Budi Santoso, S.Pd</h4>
+                        <p class="text-gray-500 text-sm">Guru Kelas 4</p>
+                    </div>
+
+                    <!-- Teacher 5 -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                        <div class="w-32 h-32 mx-auto mb-4 relative">
+                            <div
+                                class="absolute inset-0 bg-primary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <img src="images/logo.png" alt="Maya Putri, S.Pd"
+                                class="w-full h-full object-cover rounded-full border-4 border-primary-light group-hover:border-accent transition-colors relative z-10">
+                        </div>
+                        <h4 class="font-heading font-bold text-lg text-primary-dark mb-1">Maya Putri, S.Pd</h4>
+                        <p class="text-gray-500 text-sm">Guru Kelas 5</p>
+                    </div>
+
+                    <!-- Teacher 6 -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                        <div class="w-32 h-32 mx-auto mb-4 relative">
+                            <div
+                                class="absolute inset-0 bg-primary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <img src="images/logo.png" alt="Andi Wijaya, S.Pd"
+                                class="w-full h-full object-cover rounded-full border-4 border-primary-light group-hover:border-accent transition-colors relative z-10">
+                        </div>
+                        <h4 class="font-heading font-bold text-lg text-primary-dark mb-1">Andi Wijaya, S.Pd</h4>
+                        <p class="text-gray-500 text-sm">Guru Kelas 6</p>
+                    </div>
+
+                    <!-- Teacher 7 -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                        <div class="w-32 h-32 mx-auto mb-4 relative">
+                            <div
+                                class="absolute inset-0 bg-primary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <img src="images/logo.png" alt="Fajar Nugroho, S.Pd"
+                                class="w-full h-full object-cover rounded-full border-4 border-primary-light group-hover:border-accent transition-colors relative z-10">
+                        </div>
+                        <h4 class="font-heading font-bold text-lg text-primary-dark mb-1">Fajar Nugroho, S.Pd</h4>
+                        <p class="text-gray-500 text-sm">Guru Penjasorks</p>
+                    </div>
+
+                    <!-- Teacher 8 -->
+                    <div
+                        class="bg-white p-6 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                        <div class="w-32 h-32 mx-auto mb-4 relative">
+                            <div
+                                class="absolute inset-0 bg-primary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                            </div>
+                            <img src="images/logo.png" alt="Lina Marlina, S.Sn"
+                                class="w-full h-full object-cover rounded-full border-4 border-primary-light group-hover:border-accent transition-colors relative z-10">
+                        </div>
+                        <h4 class="font-heading font-bold text-lg text-primary-dark mb-1">Lina Marlina, S.Sn</h4>
+                        <p class="text-gray-500 text-sm">Guru Seni Budaya</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gradient-to-br from-primary-dark to-primary text-white py-12 md:py-16">
+            <div class="container mx-auto px-6 md:px-12 lg:px-20">
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <!-- About -->
+                    <div>
+                        <h3 class="font-heading font-bold text-xl text-accent-light mb-4">SD 012 Beringin Jaya</h3>
+                        <p class="text-white/90 leading-relaxed">
+                            Sekolah Dasar Negeri yang berkomitmen untuk menciptakan generasi berakhlak mulia dan
+                            berprestasi.
+                        </p>
+                    </div>
+
+                    <!-- Contact -->
+                    <div>
+                        <h3 class="font-heading font-bold text-xl text-accent-light mb-4">Kontak Kami</h3>
+                        <div class="space-y-3 text-white/90">
+                            <p class="flex items-start gap-2">
+                                <i data-lucide="map-pin" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                                <span>Jl. Pendidikan No. 12, Beringin Jaya</span>
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                                <span>(0123) 456-7890</span>
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                                <span>info@sd012beringinjaya.sch.id</span>
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                                <span>Senin - Jumat: 07.00 - 14.00 WIB</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h3 class="font-heading font-bold text-xl text-accent-light mb-4">Tautan Cepat</h3>
+                        <ul class="space-y-2 text-white/90">
+                            <li><a href="profil.html"
+                                    class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    Profil Sekolah
+                                </a></li>
+                            <li><a href="akademik.html"
+                                    class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    Program Akademik
+                                </a></li>
+                            <li><a href="galeri.html"
+                                    class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    Galeri Kegiatan
+                                </a></li>
+                            <li><a href="kontak.html"
+                                    class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                    PPDB & Kontak
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-white/20 pt-8 text-center text-white/80">
+                    <p>&copy; 2026 SD 012 Beringin Jaya. Semua Hak Dilindungi.</p>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

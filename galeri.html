@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Galeri Kegiatan - SD 012 Beringin Jaya | Foto & Dokumentasi</title>
+    <meta name="description"
+        content="Galeri foto dan dokumentasi kegiatan SD 012 Beringin Jaya meliputi pembelajaran, ekstrakurikuler, acara sekolah, dan prestasi siswa.">
+    <meta name="keywords" content="galeri SD 012 Beringin Jaya, foto kegiatan sekolah, dokumentasi SD Beringin">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            dark: '#2D5016',
+                            DEFAULT: '#4A7C2C',
+                            light: '#7CB342',
+                            lighter: '#9CCC65'
+                        },
+                        accent: {
+                            dark: '#FFA000',
+                            DEFAULT: '#FFC107',
+                            light: '#FFD54F'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .filter-btn.active {
+            background-color: #4A7C2C;
+            color: white;
+            border-color: #4A7C2C;
+        }
+
+        /* Lightbox styles */
+        .lightbox-open {
+            overflow: hidden;
+        }
+
+        #lightbox {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Page Load Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md shadow-md z-50 transition-all duration-300"
+        id="navbar">
+        <div class="container mx-auto px-6 md:px-12 lg:px-20">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="images/logo.png" alt="Logo SD 012 Beringin Jaya" class="h-12 w-auto">
+                    <span class="font-heading font-bold text-xl text-primary-dark hidden sm:block">SD 012 Beringin
+                        Jaya</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex items-center gap-8">
+                    <li><a href="index.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Beranda</a>
+                    </li>
+                    <li><a href="profil.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Profil</a>
+                    </li>
+                    <li><a href="akademik.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Akademik</a>
+                    </li>
+                    <li><a href="galeri.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full border-b-2 border-primary">Galeri</a>
+                    </li>
+                    <li><a href="kontak.html"
+                            class="font-medium text-gray-700 hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full">Kontak</a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Toggle -->
+                <button class="md:hidden flex flex-col gap-1.5 p-2" id="navbarToggle">
+                    <span class="w-6 h-0.5 bg-primary transition-all"></span>
+                    <span class="w-6 h-0.5 bg-primary transition-all"></span>
+                    <span class="w-6 h-0.5 bg-primary transition-all"></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden" id="mobileMenu">
+                <ul class="flex flex-col gap-4 py-4">
+                    <li><a href="index.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Beranda</a>
+                    </li>
+                    <li><a href="profil.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Profil</a>
+                    </li>
+                    <li><a href="akademik.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Akademik</a>
+                    </li>
+                    <li><a href="galeri.html"
+                            class="block py-2 px-4 bg-primary/10 text-primary rounded-lg font-medium">Galeri</a></li>
+                    <li><a href="kontak.html"
+                            class="block py-2 px-4 hover:bg-gray-100 rounded-lg font-medium transition-colors">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="animate-fadeInUp">
+
+        <!-- Page Header -->
+        <section class="relative h-[350px] flex items-center justify-center overflow-hidden mt-[70px]">
+            <div class="absolute inset-0">
+                <img src="images/hero/hero2.png" alt="SD 012 Beringin Jaya" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-dark/90 to-primary/80"></div>
+            <div class="relative z-10 text-center text-white px-4">
+                <h1 class="font-heading font-bold text-4xl md:text-5xl mb-4">Galeri Kegiatan</h1>
+                <p class="text-xl text-accent-light">Dokumentasi Aktivitas & Prestasi Siswa</p>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 md:px-12 lg:px-20">
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button
+                        class="filter-btn active px-6 py-2 rounded-full border-2 border-primary text-primary font-medium hover:bg-primary hover:text-white transition-colors"
+                        data-filter="all">
+                        Semua
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-full border-2 border-primary text-primary font-medium hover:bg-primary hover:text-white transition-colors"
+                        data-filter="pembelajaran">
+                        Pembelajaran
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-full border-2 border-primary text-primary font-medium hover:bg-primary hover:text-white transition-colors"
+                        data-filter="ekstrakurikuler">
+                        Ekstrakurikuler
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-full border-2 border-primary text-primary font-medium hover:bg-primary hover:text-white transition-colors"
+                        data-filter="acara">
+                        Acara
+                    </button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-full border-2 border-primary text-primary font-medium hover:bg-primary hover:text-white transition-colors"
+                        data-filter="fasilitas">
+                        Fasilitas
+                    </button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8" id="galleryGrid">
+                    <!-- Learning 1 -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg"
+                        data-category="pembelajaran">
+                        <img src="images/hero/hero1.png" alt="Belajar di Kelas"
+                            class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span
+                                    class="inline-block bg-accent text-primary-dark text-xs font-bold px-3 py-1 rounded-full mb-2">Pembelajaran</span>
+                                <h3 class="text-white font-bold text-lg">Belajar di Kelas</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility 1 -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg"
+                        data-category="fasilitas">
+                        <img src="images/hero/hero3.png" alt="Gedung Sekolah"
+                            class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span
+                                    class="inline-block bg-accent text-primary-dark text-xs font-bold px-3 py-1 rounded-full mb-2">Fasilitas</span>
+                                <h3 class="text-white font-bold text-lg">Gedung Sekolah Utama</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activity 1 -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg"
+                        data-category="ekstrakurikuler">
+                        <img src="images/hero/hero2.png" alt="Kegiatan Pramuka"
+                            class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span
+                                    class="inline-block bg-accent text-primary-dark text-xs font-bold px-3 py-1 rounded-full mb-2">Ekstrakurikuler</span>
+                                <h3 class="text-white font-bold text-lg">Kegiatan Pramuka</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Learning 2 -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg"
+                        data-category="pembelajaran">
+                        <img src="images/hero/hero1.png" alt="Praktik Sains"
+                            class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span
+                                    class="inline-block bg-accent text-primary-dark text-xs font-bold px-3 py-1 rounded-full mb-2">Pembelajaran</span>
+                                <h3 class="text-white font-bold text-lg">Praktikum Sains</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 1 -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg"
+                        data-category="acara">
+                        <img src="images/hero/hero2.png" alt="Upacara Bendera"
+                            class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span
+                                    class="inline-block bg-accent text-primary-dark text-xs font-bold px-3 py-1 rounded-full mb-2">Acara</span>
+                                <h3 class="text-white font-bold text-lg">Upacara Bendera Senin</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility 2 -->
+                    <div class="gallery-item group relative overflow-hidden rounded-2xl shadow-lg"
+                        data-category="fasilitas">
+                        <img src="images/hero/hero3.png" alt="Perpustakaan"
+                            class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <span
+                                    class="inline-block bg-accent text-primary-dark text-xs font-bold px-3 py-1 rounded-full mb-2">Fasilitas</span>
+                                <h3 class="text-white font-bold text-lg">Perpustakaan Sekolah</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox"
+        class="fixed inset-0 bg-black/90 z-[60] hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+        <button id="lightboxClose" class="absolute top-4 right-4 text-white hover:text-accent transition-colors">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+
+        <div class="relative max-w-5xl w-full">
+            <img id="lightboxImage" src="" alt=""
+                class="w-full h-auto max-h-[85vh] object-contain rounded-lg shadow-2xl">
+            <div
+                class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-white rounded-b-lg">
+                <h3 id="lightboxCaption" class="text-xl font-bold"></h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-primary-dark to-primary text-white py-12 md:py-16">
+        <div class="container mx-auto px-6 md:px-12 lg:px-20">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="font-heading font-bold text-xl text-accent-light mb-4">SD 012 Beringin Jaya</h3>
+                    <p class="text-white/90 leading-relaxed">
+                        Sekolah Dasar Negeri yang berkomitmen untuk menciptakan generasi berakhlak mulia dan
+                        berprestasi.
+                    </p>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="font-heading font-bold text-xl text-accent-light mb-4">Kontak Kami</h3>
+                    <div class="space-y-3 text-white/90">
+                        <p class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <span>Jl. Pendidikan No. 12, Beringin Jaya</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                            <span>(0123) 456-7890</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            <span>info@sd012beringinjaya.sch.id</span>
+                        </p>
+                        <p class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-5 h-5"></i>
+                            <span>Senin - Jumat: 07.00 - 14.00 WIB</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-heading font-bold text-xl text-accent-light mb-4">Tautan Cepat</h3>
+                    <ul class="space-y-2 text-white/90">
+                        <li><a href="profil.html"
+                                class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                Profil Sekolah
+                            </a></li>
+                        <li><a href="akademik.html"
+                                class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                Program Akademik
+                            </a></li>
+                        <li><a href="galeri.html"
+                                class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                Galeri Kegiatan
+                            </a></li>
+                        <li><a href="kontak.html"
+                                class="hover:text-accent-light transition-colors flex items-center gap-2">
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                                PPDB & Kontak
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 pt-8 text-center text-white/80">
+                <p>&copy; 2026 SD 012 Beringin Jaya. Semua Hak Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
