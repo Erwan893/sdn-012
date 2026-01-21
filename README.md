@@ -1,6 +1,7 @@
 # SD 012 Beringin Jaya Website
 
 Website resmi SD 012 Beringin Jaya yang modern, responsif, dan elegan. Dibangun menggunakan teknologi web terkini untuk memberikan pengalaman pengguna terbaik bagi orang tua murid dan calon siswa baru.
+View : https://erwan893.github.io/sdn-012/
 
 ## 🛠 Teknologi
 
